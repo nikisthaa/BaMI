@@ -18,3 +18,10 @@ NOTE: There should be three files train.csv, test.csv, vaild.csv. In case you wa
 
 e.g:
 `python3 train.py --rot_dir=data --n_classes=8 --n_labels=2`
+
+## Testing the model
+1. Run the script
+`python test.py "root_dir" n_classes n_labels`
+
+e.g:
+`python3 test.py --rot_dir=data --n_classes=8 --n_labels=2`
