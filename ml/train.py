@@ -126,11 +126,9 @@ if __name__ == "__main__":
 
     train_dataset = Custom_BaMI_Dataset(csv_file = 'train.csv', root_dir = ROOT_DIR, transform=transform)
     valid_dataset = Custom_BaMI_Dataset(csv_file = 'vaild.csv', root_dir = ROOT_DIR, transform=transform)
-    test_dataset = Custom_BaMI_Dataset(csv_file = 'test.csv', root_dir = ROOT_DIR, transform=transform)
 
     train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=SHUFFLE, num_workers=NUM_WORKERS)
     valid_dataloader = DataLoader(valid_dataset, batch_size=BATCH_SIZE, shuffle=SHUFFLE, num_workers=NUM_WORKERS)
-    test_dataloader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=SHUFFLE, num_workers=NUM_WORKERS)
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
