@@ -26,6 +26,9 @@ jobs:
           push: true
           tags: nikistha/bami:${{ github.sha }}, nikistha/bami:latest
 
+      - name: Login to Heroku
+        run: heroku login
+    
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.14 # This is the action
         with:
@@ -34,4 +37,3 @@ jobs:
           heroku_email: "nikshres522@gmail.com"
           usedocker: true
           appdir: "app"
-          docker_image: "nikistha/bami:${{ github.sha }}"
