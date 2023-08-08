@@ -27,7 +27,7 @@ jobs:
           tags: nikistha/bami:${{ github.sha }}, nikistha/bami:latest
 
       - name: Login to Heroku Container Registry
-        run: heroku container:login
+        run: docker login --username=_ --password=${{ secrets.HEROKU_API_KEY }} registry.heroku.com
 
       - name: Build and push to Heroku Container Registry
         env:
