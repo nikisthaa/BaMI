@@ -7,3 +7,8 @@
 
 ## To run Locally
 1. python app.py
+
+## To run in docker
+1. docker-compose up --build
+
+You can find you app running on: http://127.0.0.1:3111
