@@ -30,6 +30,8 @@ jobs:
         run: heroku container:login
 
       - name: Build and push to Heroku Container Registry
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
           docker tag nikistha/bami:${{ github.sha }} registry.heroku.com/bami/web
           docker push registry.heroku.com/bami/web
