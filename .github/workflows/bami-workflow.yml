@@ -26,14 +26,13 @@ jobs:
           push: true
           tags: nikistha/bami:${{ github.sha }}, nikistha/bami:latest
 
-      - name: Login to Heroku
-        run: heroku login
-    
-      - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.12.14 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "bami"
-          heroku_email: "nikshres522@gmail.com"
-          usedocker: true
-          appdir: "app"
+      - name: Login to Heroku Container Registry
+        run: heroku container:login
+
+      - name: Build and push to Heroku Container Registry
+        run: |
+          docker tag nikistha/bami:${{ github.sha }} registry.heroku.com/bami/web
+          docker push registry.heroku.com/bami/web
+
+      - name: Release to Heroku
+        run: heroku container:release web --app bami
