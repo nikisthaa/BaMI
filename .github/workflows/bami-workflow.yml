@@ -37,4 +37,7 @@ jobs:
           docker push registry.heroku.com/bami/web
 
       - name: Release to Heroku
-        run: heroku container:release web --app bami
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: |
+        heroku container:release web --app bami
