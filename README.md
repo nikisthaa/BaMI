@@ -1,4 +1,4 @@
-# BaMI - Berries and Mushroom Identification ([Demo](https://bami-0a9781643f88.herokuapp.com/))
+# BaMI - Berries and Mushroom Identification ([Demo](https://replit.com/@NikitaShrestha1/BaMI))
 Species Classification to classify different species of mushrooms, and berries along with its edibility
 
 # To run the web app
